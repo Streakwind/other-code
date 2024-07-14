@@ -39,13 +39,13 @@ ll maxsubarray (vector<ll> theList, ll low, ll high) {
     }
 
     if (low == high) {
-        return theList[0];
+        return theList[low];
     }
 
     mid = low + high;
     mid /= 2;
 
-    return max(max(maxsubarray(theList, low, mid-1), maxsubarray(theList, mid+1, high)), crossingsub(theList, low, mid, high)); //do not put high+1 for highest point because then it keeps adding 1. only mid can be modified as it is calculated every time
+    return max(max(maxsubarray(theList, low, mid), maxsubarray(theList, mid+1, high)), crossingsub(theList, low, mid, high)); //do not put high+1 for highest point because then it keeps adding 1. only mid can be modified as it is calculated every time
 }
 
 int main () {
