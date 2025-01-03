@@ -12,6 +12,7 @@ struct Node {
 
 class DoublyLinkedList {
     Node* head;
+
     public:
         DoublyLinkedList () {
             head = NULL;
